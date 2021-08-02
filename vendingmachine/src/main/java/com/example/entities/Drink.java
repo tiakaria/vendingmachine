@@ -28,5 +28,4 @@ private int sugar;
 private int milk;
 @Column(name = "water")
 private int water;
-
 }
