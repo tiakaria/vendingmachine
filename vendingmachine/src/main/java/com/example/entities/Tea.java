@@ -1,5 +1,10 @@
 package com.example.entities;
 
-public class Tea {
+@Entity
+public class Tea extends Drink{
+@TeaQuantity
+@Column(name = "TEA_QUANTITY")
+private int TeaQuantity;
+
 
 }
