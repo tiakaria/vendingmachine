@@ -3,8 +3,8 @@ package com.example.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="CONTAINERS")
-public class Containers {
+@Table(name="CONTAINER")
+public class Container {
 	@Id
 	private static int id;
 	@Column(name = "TEA")

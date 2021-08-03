@@ -1,6 +1,5 @@
 package com.example.entities;
 import java.io.Serializable;
-import java.lang.invoke.InjectedProfile;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

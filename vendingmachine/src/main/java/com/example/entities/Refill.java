@@ -5,8 +5,6 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 @Entity
 @Table(name="REFILL")
 public class Refill implements Serializable{
