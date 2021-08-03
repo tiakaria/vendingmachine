@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Entity
 @Table(name="REFILL")
 public class Refill implements Serializable{
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id @Column(name="REFILL_ID")
 	private int refillId;
 	@Column(name="TEA_RF")
