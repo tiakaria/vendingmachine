@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="REFILL")
 public class Refill implements Serializable{
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id @Column(name="REFILL_ID")
 	private int refillId;
 	@Column(name="TEA_RF")
