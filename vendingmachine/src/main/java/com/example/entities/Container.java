@@ -8,14 +8,9 @@ import lombok.Data;
 @Entity
 @Table(name="CONTAINER")
 public class Container {
-<<<<<<< HEAD
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CTN_ID")
 	private int id;
-=======
-	@Id
-	private static int id;
->>>>>>> upstream/main
 	@Column(name = "TEA")
 	private float teaContainer;
 	@Column(name = "COFFEE")
