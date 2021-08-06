@@ -1,6 +1,9 @@
 package com.example.entities;
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> upstream/main
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
