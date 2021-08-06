@@ -9,5 +9,5 @@ import com.example.entities.Refill;
 @CrossOrigin()
 @Repository
 public interface RefillRepository extends JpaRepository<Refill, Integer> {
-
+	
 }

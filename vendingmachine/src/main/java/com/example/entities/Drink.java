@@ -1,31 +1,33 @@
 package com.example.entities;
 import java.io.Serializable;
-import java.lang.invoke.InjectedProfile;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "Drink")
 public class Drink implements Serializable{
-@Id
-@Column(name = "DRINK_ID")
-private int id;
-@Column(name = "name")
-private String name;
-@Column(name = "cost")
-private double cost;
-@Column(name = "sugar")
-private int sugar;
-@Column(name = "milk")
-private int milk;
-@Column(name = "water")
-private int water;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "DRINK_ID")
+	private int drinkId;
+	@Column(name = "name")
+	private String name;
+	@Column(name = "cost")
+	private double cost;
+	@Column(name = "sugar")
+	private int sugar;
+	@Column(name="tea")
+	private int tea;
+	@Column(name="coffee")
+	private int coffee;
+	@Column(name = "milk")
+	private int milk;
+	@Column(name = "water")
+	private int water;
 }

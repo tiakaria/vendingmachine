@@ -2,19 +2,23 @@ package com.example.entities;
 
 import javax.persistence.*;
 
+import lombok.Data;
+
+@Data
 @Entity
-@Table(name="CONTAINERS")
-public class Containers {
-	@Id
-	private static int id;
+@Table(name="CONTAINER")
+public class Container {
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="CTN_ID")
+	private int id;
 	@Column(name = "TEA")
-	private static float teaContainer;
+	private float teaContainer;
 	@Column(name = "COFFEE")
-	private static float coffeeContainer;
+	private float coffeeContainer;
 	@Column(name = "SUGAR")
-	private static float sugarContainer;
+	private float sugarContainer;
 	@Column(name = "WATER")
-	private static float waterContainer;
+	private float waterContainer;
 	@Column(name = "MILK")
-	private static float milkContainer;
+	private float milkContainer;
 }
