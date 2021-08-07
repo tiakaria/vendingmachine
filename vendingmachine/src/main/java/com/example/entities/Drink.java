@@ -1,11 +1,8 @@
 package com.example.entities;
 import java.io.Serializable;
 import java.util.Set;
-
 import javax.persistence.*;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import lombok.Data;
 
 @Data
@@ -14,7 +11,7 @@ import lombok.Data;
 public class Drink implements Serializable{
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DRINK_ID")
-	private int drinkId;
+	private int id;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "cost")
@@ -33,5 +30,6 @@ public class Drink implements Serializable{
 	@JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "drink")
     private Set<SaleList> saleLists;
-
+	
+	
 }
