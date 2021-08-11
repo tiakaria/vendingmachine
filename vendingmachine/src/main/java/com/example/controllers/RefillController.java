@@ -16,19 +16,14 @@ import com.example.services.RefillService;
 
 @CrossOrigin()
 @RestController
-@RequestMapping("/api/refill")
+@RequestMapping()
 public class RefillController {
 	@Autowired
 	private RefillService rs;
 	
-//	@PostMapping()
-//	public ResponseEntity<?> addRefill(@RequestBody Refill rf){
-//		Refill x = rs.addRefill(rf);
-//		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-//                .path("/{id}")
-//                .buildAndExpand(x.getRefillId())
-//                .toUri();
-//		return ResponseEntity.created(location).build();
-//	};
+	@PostMapping("/refills/add")
+	public ResponseEntity<Refill> addRefill(@RequestBody Refill rf){
+		return ResponseEntity.created(null).body(rs.addRefill(rf));
+	};
 	
 }
