@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -18,7 +19,7 @@ public class SaleList implements Serializable{
 	private int saleListId;
 	
 	@JsonBackReference
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "drinkId", nullable = false)
 	private Drink drink;
 	@Column(name="NUMBER_OF_CUP")

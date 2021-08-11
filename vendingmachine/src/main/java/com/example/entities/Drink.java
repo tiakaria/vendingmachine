@@ -28,8 +28,7 @@ public class Drink implements Serializable{
 	private int water;
 	
 	@JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "drink")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "drink")
     private Set<SaleList> saleLists;
-	
 	
 }
