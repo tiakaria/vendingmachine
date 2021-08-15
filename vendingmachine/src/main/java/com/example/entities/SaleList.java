@@ -26,4 +26,54 @@ public class SaleList implements Serializable{
 	private int numberOfCup;
 	@Column(name="DATE")
 	private Date date;
+	
+	public SaleList() {
+		super();
+	}
+	
+	public SaleList(int saleListId, Drink drink, int numberOfCup, Date date) {
+		super();
+		this.saleListId = saleListId;
+		this.drink = drink;
+		this.numberOfCup = numberOfCup;
+		this.date = date;
+	}
+
+	public int getSaleListId() {
+		return saleListId;
+	}
+
+	public void setSaleListId(int saleListId) {
+		this.saleListId = saleListId;
+	}
+
+	public Drink getDrink() {
+		return drink;
+	}
+
+	public void setDrink(Drink drink) {
+		this.drink = drink;
+	}
+
+	public int getNumberOfCup() {
+		return numberOfCup;
+	}
+
+	public void setNumberOfCup(int numberOfCup) {
+		this.numberOfCup = numberOfCup;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "SaleList [saleListId=" + saleListId + ", drink=" + drink + ", numberOfCup=" + numberOfCup + ", date="
+				+ date + "]";
+	}
 }
