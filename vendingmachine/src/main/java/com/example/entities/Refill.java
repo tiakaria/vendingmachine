@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name="REFILL")
 public class Refill implements Serializable{

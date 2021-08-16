@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.entities.Refill;
 
-@CrossOrigin()
 @Repository
 public interface RefillRepository extends JpaRepository<Refill, Integer> {
 	@Query("SELECT r from Refill r where DATE_FORMAT(r.date,'%Y-%M-%d') = DATE_FORMAT(current_date,'%Y-%M-%d')")

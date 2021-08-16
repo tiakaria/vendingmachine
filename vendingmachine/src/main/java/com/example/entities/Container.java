@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name="CONTAINER")
 public class Container {

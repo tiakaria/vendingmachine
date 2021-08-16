@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.entities.*;
 
-@CrossOrigin()
 @Repository
 public interface ContainerRepository  extends JpaRepository<Container, Integer>{
 

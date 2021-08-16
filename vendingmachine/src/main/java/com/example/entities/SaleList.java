@@ -6,11 +6,14 @@ import java.util.Date;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name="SALE_LIST")
 public class SaleList implements Serializable{
@@ -19,7 +22,7 @@ public class SaleList implements Serializable{
 	private int saleListId;
 	
 	@JsonBackReference
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "drinkId", nullable = false)
 	private Drink drink;
 	@Column(name="NUMBER_OF_CUP")

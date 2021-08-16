@@ -2,10 +2,12 @@ package com.example.entities;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name = "Drink")
 public class Drink implements Serializable{
@@ -27,7 +29,7 @@ public class Drink implements Serializable{
 	@Column(name = "water")
 	private int water;
 	
-	@JsonManagedReference
+	@JsonManagedReference	
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "drink")
     private Set<SaleList> saleLists;
 	

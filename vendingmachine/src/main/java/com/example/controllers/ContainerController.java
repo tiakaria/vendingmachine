@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,13 +23,14 @@ public class ContainerController {
 	private ContainerService cs;
 	
 	@GetMapping("/containers/{id}")
-    public ResponseEntity <Container> getContainerById(@PathVariable(value = "id") int id)
+    public ResponseEntity <Container> getContainerById(@PathVariable("id") int id)
     throws ResourceNotFoundException {
         Container ctn = cs.getContainerById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Container not found for this id :: " + id));
         return ResponseEntity.created(null).body(ctn);
     }
 	
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@PutMapping("/containers/update")
 	public ResponseEntity<Container> updateContainer(@RequestBody Container ctn) 
 	throws ResourceNotFoundException

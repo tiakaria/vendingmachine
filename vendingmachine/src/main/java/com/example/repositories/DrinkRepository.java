@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.entities.Drink;
 
-
-@CrossOrigin()
 @Repository
 public interface DrinkRepository extends JpaRepository<Drink, Integer>{
 
