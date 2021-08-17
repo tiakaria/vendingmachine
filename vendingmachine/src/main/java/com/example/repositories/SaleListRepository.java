@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.entities.*;
 
-@CrossOrigin()
 @Repository
 public interface SaleListRepository extends JpaRepository<SaleList, Integer>{
 	List<SaleList> findByDrinkId(@RequestParam("id") int id);
 	
-	//@Query("SELECT s from SaleList s where DATE_FORMAT(s.date,'%Y-%M-%d') = DATE_FORMAT(current_date,'%Y-%M-%d')")
 	@Query("SELECT s from SaleList s where (DATE_FORMAT(s.date,'%Y-%M-%d') = DATE_FORMAT(current_date,'%Y-%M-%d'))"
 			+ "AND s.drink.id = ?1")
 	List<SaleList> findByToday(@RequestParam("drinkId") int drinkId);
+	
 }
